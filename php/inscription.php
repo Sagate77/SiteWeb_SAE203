@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription - Université Gustave Eiffel</title>
+  <link rel="stylesheet" href="../css/inscription.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-container">
+      <h1>Inscription</h1>
+      <p>Identifiants :</p>
+      <form action="traitement_inscription.php" method="POST">
+        <input type="text" placeholder="Nom" name="nom" required />
+        <input type="text" placeholder="Prénom" name="prenom" required />
+        <input type="text" placeholder="Pseudo (facultatif)" name="pseudo" />
+        <input type="text" placeholder="JJ/MM/AAAA" name="date_naissance" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="text" placeholder="Adresse Postale" name="adresse" required />
+
+        <label for="role">Rôle :</label>
+        <select id="role" name="role" required>
+          <option>Etudiant</option>
+          <option>Enseignant</option>
+          <option>Agent</option>
+          <option>Administrateur</option>
+        </select>
+
+        <input type="password" placeholder="Mot de Passe (6 caractères minimum)" name="mot_de_passe" required />
+
+        <button type="submit">S’inscrire</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-middle">
+        <p>2024-2025 BUT MMI</p>
+        <img src="../imagesSite/test.png" alt="Logo MMI" class="footer-logo">
+      </div>
+      <div class="footer-links">
+        <a href="html/propos.html">À propos</a>
+        <a href="html/propos.html">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
