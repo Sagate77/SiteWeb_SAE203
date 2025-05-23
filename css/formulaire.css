@@ -1,0 +1,65 @@
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              display: flex;
+              justify-content: center;
+              padding: 40px 0;
+            }
+            h1 {
+                text-align: center;
+            }
+            .a4-container {
+              background-color: white;
+              width: 21cm;
+              min-height: 29.7cm;
+              padding: 2cm;
+              box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            label {
+                display: block;
+            }
+            .consignes {
+                text-align: center;
+            }
+        
+            table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+        
+            td {
+              border: 1px solid #000;
+              padding: 8px;
+              color: white;
+              background-color: #4d78be;
+            }
+
+            button {
+                color: white;
+                background-color: #4d78be;
+                width: 30%;
+            }
+            .IUT {
+                height: 90px;
+                width: auto;
+                transform: translate(600px, -50px);
+            }
+
+            .logo_gustave_eiffel {
+                height: 100px;
+                width: auto;
+                transform: translate(-50px, -50px);
+            }
+            .signature {
+                width: 300px;
+                transform: translate(400px, -30px);
+                text-align: center;
+            }
+            .Date {
+                width: 300px;
+                transform: translate(15px, 80px);
+                text-align: center;
+            }
+            .alternative {
+                text-align: center;
+            }
