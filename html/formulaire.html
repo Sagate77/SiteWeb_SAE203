@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de Matériel</title>
+    <link href="../test/formulaire.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <div class="a4-container">
+        <img src="../images/logo_gustave_eiffel.jpg" alt="Eiffel" class="logo_gustave_eiffel">
+        <img src="../images/Logo IUT.jpg" alt="Logo" class="IUT">
+
+        <h1>Formulaire de Réservation</h1>
+
+        <form action="php/reservation_handler.php" method="POST">
+
+            <div class="consignes">
+                Nom et prénom de l’étudiant référent,
+                qui se chargera de récupérer et de remettre 
+                les clés de la salle à l'accueil.
+                Il est tenu responsable du matériel.
+                En quittant cette dernière, il doit 
+                s’assurer de remettre le matériel à sa place,
+                et de bien fermer la porte à clé.
+            </div>
+
+            <br>
+
+            <table border="1">
+                <tr>
+                    <td>Nom</td>
+                    <td><input type="text" name="nom" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" name="prenom" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Numéro Étudiant</td>
+                    <td><input type="text" name="num_etudiant" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Adresse Email</td>
+                    <td><input type="email" name="adresse_email" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Groupe TP</td>
+                    <td><input type="text" name="groupe_tp" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Matériel à réserver</td>
+                    <td><input type="text" name="materiel" style="width:100%" required></td>
+                </tr>
+                <tr>
+                    <td>Heure d'accès (à partir de 8h30)</td>
+                    <td><input type="time" name="heure_debut" min="08:30" style="width:100%"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Heure remise des clés (jusqu'à 18h00 max)
+                        <p style="margin: 6px 0 0; font-size: 0.9em; color: d9534f;">
+                            Il est obligatoire de respecter l’heure de remise des clés,
+                            <br>
+                            un contrôle du matériel sera effectué juste après la remise.
+                        </p>
+                    </td>
+                    <td><input type="time" name="heure_fin" max="18:00" style="width:100%"></td>
+                </tr>
+            </table>
+
+            <h2>Motif de réservation :</h2>
+            <textarea name="motif" rows="4" style="width:100%;"></textarea>
+
+            <br><br><br><br>
+
+            <table border="1">
+                <tr>
+                    <td>
+                        Nom des étudiants participants au projet
+                        <p style="margin: 6px 0 0; font-size: 0.9em; color: 9534f;">
+                            Il est formellement interdit que le matériel soit utilisé
+                            par des personnes non citées dans cette demande.
+                        </p>
+                    </td>
+                    <td><textarea name="nom_etudiant" rows="4" style="width:100%;"></textarea></td>
+                </tr>
+            </table>
+
+            <br><br>
+
+            <h2>Commentaires éventuels :</h2>
+            <textarea name="commentaires" rows="5" style="width:100%;"></textarea>
+
+            <br><br>
+
+            <div class="signature">
+                <label for="signature">Signature</label>
+                <br>
+                <input type="text" name="signature" placeholder="Nom complet ou mention 'lu et approuvé'" style="width:100%;" required>
+            </div>
+
+            <br>
+
+            <div class="alternative">
+                (Si vous ne pouvez pas signer avec votre ordinateur,
+                vous avez la possibilité d'attacher une photo de votre
+                signature à votre mail de demande d'accès)
+                <br><br>
+                <label for="uploadSignature">Importer signature :</label>
+                <input type="file" id="uploadSignature" accept="image/*" onchange="previewSignature(event)">
+                <br>
+                <img id="signaturePreview" src="" style="max-width:300px; margin-top:10px;">
+            </div>
+
+            <script>
+                function previewSignature(event) {
+                    const image = document.getElementById('signaturePreview');
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                }
+            </script>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+                    Réserver
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
