@@ -1,0 +1,158 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+/* Menu de Navigation*/
+
+.menu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    z-index: 20;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .pages {
+    display: flex;
+}
+
+.menu .pages a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px 0 20px;
+}
+
+.menu .pages a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.overlay_left, .overlay_right {
+    top: 0;
+    width: 7vw;
+    height: 60px;
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+}
+
+.menu .overlay_left {
+    left: 0;
+}
+.menu .overlay_right {
+    right: 0;
+}
+.menu .overlay_right:hover, .overlay_left:hover {
+    opacity: 0.2;
+}
+.menu .left {
+    left: 2%; /* pousse cet élément vers la gauche */
+}
+.menu .right {
+    right: 2%; /* pousse cet élément vers la droite */
+}
+
+/* Bannière et titre de la page */
+
+.banniere {
+    position: relative;
+}
+
+.banniere .img-banniere {
+    width: 100%;
+    height: 50vh;
+    background-image: url("../images/iut2.jpg");
+    background-attachment: fixed; /* défile avec le reste de la page */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banniere .txt_banniere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.banniere .txt_banniere h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1e2a63; 
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    bottom: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-middle {
+    text-align: center;
+}
+
+.footer-middle p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-logo {
+    width: 50px; 
+    height: auto;
+    margin-top: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d3d3d3; 
+}
