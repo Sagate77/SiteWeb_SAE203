@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendrier de Réservation</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+    <style>
+        #calendar { max-width: 900px; margin: 50px auto; }
+    </style>
+</head>
+<body>
+    <div id='calendar'></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                dateClick: function (info) {
+                    if (confirm(`Réserver le matériel pour le ${info.dateStr} ?`)) {
+                        fetch('php/save_date.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ date: info.dateStr })
+                        }).then(() => {
+                            alert('Date réservée avec succès.');
+                            window.location.href = 'accueil.html';
+                        });
+                    }
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
