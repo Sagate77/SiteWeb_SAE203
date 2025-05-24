@@ -113,12 +113,56 @@
                 <img id="signaturePreview" src="" style="max-width:300px; margin-top:10px;">
             </div>
 
-            <script>
-                function previewSignature(event) {
-                    const image = document.getElementById('signaturePreview');
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                }
-            </script>
+<script>
+  const canvas = document.getElementById('signature-pad');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  canvas.addEventListener('mousedown', () => drawing = true);
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseout', () => drawing = false);
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('touchstart', (e) => { drawing = true; e.preventDefault(); });
+  canvas.addEventListener('touchend', () => drawing = false);
+  canvas.addEventListener('touchmove', drawTouch);
+
+  function draw(e) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#000';
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+  }
+
+  function drawTouch(e) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#000';
+    ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
+    e.preventDefault();
+  }
+
+  function clearSignature() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // Avant l'envoi, enregistrer la signature dans le champ caché
+  document.querySelector('form').addEventListener('submit', function(e) {
+    const signatureData = canvas.toDataURL();
+    document.getElementById('signature').value = signatureData;
+  });
+</script>
 
             <div style="text-align: center; margin-top: 20px;">
                 <button type="submit" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
