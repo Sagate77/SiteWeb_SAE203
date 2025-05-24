@@ -32,7 +32,7 @@ if ($result && $result->num_rows === 1) {
         // Redirection selon le rôle
         switch ($user['role']) {
             case 'Etudiant':
-                header("Location: index.php");
+                header("Location: ../html/index.html");
                 break;
             case 'Enseignant':
                 header("Location: enseignant.php");
