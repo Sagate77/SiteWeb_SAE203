@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Administrateur') {
-    header("Location: connexion.php");
+    header("Location: ../php/connexion.php");
     exit();
 }
 ?>
