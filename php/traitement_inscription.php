@@ -21,7 +21,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)");
 $stmt->bind_param("ssssssss", $nom, $prenom, $pseudo, $date_naissance, $email, $adresse, $role, $mot_de_passe);
 
 if ($stmt->execute()) {
-    header("Location: connexion.php");
+    header("Location: ../html/connexion.html");
     exit();
 } else {
     echo "Erreur: " . $stmt->error;
