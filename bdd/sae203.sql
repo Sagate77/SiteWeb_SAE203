@@ -1,7 +1,3 @@
-------------------------------------------------------------------------
--- /!\ CRÉEZ UNE BASE DE DONNÉES "sae203" AVANT D'IMPORTER CE FICHIER /!\
-------------------------------------------------------------------------
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
