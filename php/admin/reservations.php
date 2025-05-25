@@ -34,7 +34,7 @@ try {
     </head>
     <body>
         <nav class="menu">
-            <img class="left" src="../../imagesSite/uge.png" alt="logo">
+            <img class="left" src="../../images/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
             <div class="pages">
                 <a href="./materiel.php"><div>Catalogue</div></a>
@@ -43,7 +43,7 @@ try {
                 <a href="./reservations.php"><div>Mes Réservations</div></a>
                 <a href="./index_admin.php"><div>Administrateur</div></a>
             </div>
-            <img class="right" src="../../imagesSite/compte.png" alt="compte">
+            <img class="right" src="../../images/compte.png" alt="compte">
             <a href="compte.php" class="overlay_right"></a>
         </nav>
             
@@ -163,7 +163,7 @@ try {
             <div class="footer-container">
                 <div class="footer-middle">
                     <p>2024-2025 BUT MMI</p>
-                    <img src="../../imagesSite/uge.png" alt="Logo MMI" class="footer-logo">
+                    <img src="../../images/uge.png" alt="Logo MMI" class="footer-logo">
                 </div>
                 <div class="footer-links">
                     <a href="../../html/propos.html">À propos</a>
