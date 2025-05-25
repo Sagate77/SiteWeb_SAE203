@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=bdd_sae203;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=sae203;charset=utf8', 'root', '');
 
 // Liste des rôles possibles
 $roles = ['Agent', 'Administrateur', 'Étudiant', 'Enseignant'];

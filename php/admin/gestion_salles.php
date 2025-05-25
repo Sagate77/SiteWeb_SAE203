@@ -1,6 +1,6 @@
 <?php
 // connexion à la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=bdd_sae203;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=sae203;charset=utf8', 'root', '');
 
 // Ajout d'une salle
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {

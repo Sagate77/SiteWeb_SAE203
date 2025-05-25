@@ -41,7 +41,7 @@
                 </p>
                 </div>
                 <div class="img-panneau">
-                <img src="../images/Salle138.JPG" alt="Panneau de destinations">
+                <img src="../../imagesSite/salle.jpg" alt="Panneau de destinations">
             </div>
         </section>
 

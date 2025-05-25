@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$conn = new mysqli("localhost", "root", "", "utilisateurs");
+$conn = new mysqli("localhost", "root", "", "sae203");
 if ($conn->connect_error) {
     die("Connexion échouée: " . $conn->connect_error);
 }
@@ -15,16 +15,16 @@ $adresse = $_POST['adresse'];
 $role = $_POST['role'];
 $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
 
-// Requête d’insertion
-$sql = "INSERT INTO users (nom, prenom, pseudo, date_naissance, email, adresse, role, mot_de_passe, valide)
-VALUES ('$nom', '$prenom', '$pseudo', '$date_naissance', '$email', '$adresse', '$role', '$mot_de_passe', 0)";
+// Requête préparée
+$stmt = $conn->prepare("INSERT INTO users (nom, prenom, pseudo, date_naissance, email, adresse, role, mot_de_passe, valide)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)");
+$stmt->bind_param("ssssssss", $nom, $prenom, $pseudo, $date_naissance, $email, $adresse, $role, $mot_de_passe);
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute()) {
     header("Location: connexion.php");
     exit();
 } else {
-    echo "Erreur: " . $sql . "<br>" . $conn->error;
+    echo "Erreur: " . $stmt->error;
 }
-
-$conn->close();
+$stmt->close();
 ?>

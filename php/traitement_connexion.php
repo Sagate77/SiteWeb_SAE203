@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "utilisateurs");
+$conn = new mysqli("localhost", "root", "", "sae203");
 
 if ($conn->connect_error) {
     die("Connexion échouée: " . $conn->connect_error);
@@ -8,6 +8,7 @@ if ($conn->connect_error) {
 
 $email = $_POST['email'];
 $mot_de_passe = $_POST['mot_de_passe'];
+
 
 // Sécurisation contre injection SQL avec prepare
 $sql = "SELECT * FROM users WHERE email = ?";
@@ -28,23 +29,26 @@ if ($result && $result->num_rows === 1) {
 
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
+        $_SESSION['nom'] = $user['nom'];
+        $_SESSION['prenom'] = $user['prenom'];
+        $_SESSION['pseudo'] = $user['pseudo'];
+        $_SESSION['date_naissance'] = $user['date_naissance'];
+        $_SESSION['adresse'] = $user['adresse'];
 
         // Redirection selon le rôle
         switch ($user['role']) {
             case 'Etudiant':
-                header("Location: ../html/index.html");
+                header("Location: ./etudiant/index.php");
                 break;
             case 'Enseignant':
-                header("Location: enseignant.php");
+                header("Location: ./enseignant/index.php");
                 break;
             case 'Agent':
-                header("Location: agent.php");
+                header("Location: ./agent/index.php");
                 break;
             case 'Administrateur':
-                header("Location: administrateur.php");
+                header("Location: ./admin/index.php");
                 break;
-            default:
-                header("Location: page_principale.php");
         }
         exit();
     } else {

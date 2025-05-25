@@ -14,9 +14,9 @@
             <img class="left" src="../../imagesSite/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
             <div class="pages">
-                <a href="./materiel.php"><div>Matériel</div></a>
-                <a href="./salles.php"><div>Salles</div></a>
-                <a href="./reserver.php"><div>Réserver</div></a>
+                <a href="./materiel.php"><div>Catalogue</div></a>
+                <a href="./reserver_materiel.php"><div>Matériel</div></a>
+                <a href="./reserver_salles.php"><div>Salles</div></a>
                 <a href="./reservations.php"><div>Mes Réservations</div></a>
                 <a href="./index_admin.php"><div>Administrateur</div></a>
             </div>
@@ -45,7 +45,7 @@
                 </p>
                 </div>
                 <div class="img-panneau">
-                <img src="../../images/Salle138.JPG" alt="Panneau de destinations">
+                <img src="../../imagesSite/salle.jpg" alt="Panneau de destinations">
             </div>
         </section>
 

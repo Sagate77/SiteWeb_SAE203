@@ -2,7 +2,7 @@
 // Pas de session_start ici, car déjà dans index_admin.php
 
 // Connexion BDD, ou mieux passer $conn depuis index_admin.php
-$conn = new mysqli("localhost", "root", "", "bdd_sae203");
+$conn = new mysqli("localhost", "root", "", "sae203");
 if ($conn->connect_error) {
     die("Erreur de connexion : " . $conn->connect_error);
 }

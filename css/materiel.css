@@ -1,18 +1,8 @@
-h2 {
-    font-size: 24px;
-    margin: 50px 0 0 51px;
-}
-
-hr {
-    opacity: 30%;
-    margin: 20px 0 30px 51px;
-    width: 90vw;
-}
-
 .catalogue {
     border-collapse: collapse;
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .catalogue td {
@@ -20,7 +10,7 @@ hr {
     height: 32vh;
 }
 
-.catalogue td:hover {
+.catalogue td:hover:not(:empty) {
     background-color: rgb(231, 231, 231);
 }
 

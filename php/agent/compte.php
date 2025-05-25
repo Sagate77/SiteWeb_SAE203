@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Salles</title>
         <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/compte.css">
     </head>
     <body>
         <nav class="menu">
@@ -22,7 +23,7 @@
         <section class="banniere">
             <div class="img-banniere"></div>
             <div class="txt_banniere">
-                <h1>Compte</h1>
+                <h1>Mon Compte</h1>
             </div>
         </section>
 

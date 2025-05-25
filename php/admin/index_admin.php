@@ -1,11 +1,12 @@
 <?php include 'debut.php'; ?>
+
 <!DOCTYPE html>
-<html lang="fr"
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Admin - Tableau de bord</title>
-  <link rel="stylesheet" href="admin.css">
-  <script defer src="admin.js"></script>
+  <link rel="stylesheet" href="../../css/admin.css">
+  <script defer src="../../js/admin.js"></script>
 </head>
 <body>
   <header>
@@ -15,10 +16,11 @@
   <nav>
     <ul>
       <li><a href="#" data-target="materiel">Matériel</a></li>
-      <li><a href="#" data-target="reservations">Réservations</a></li>
       <li><a href="#" data-target="salles">Salles</a></li>
+      <li><a href="#" data-target="reservations">Réservations</a></li>
       <li><a href="#" data-target="utilisateurs">Utilisateurs</a></li>
       <li><a href="#" data-target="catalogue">Catalogue</a></li>
+      <li><a href="index.php"  class="exception">Retour au site</a></li>
     </ul>
   </nav>
 

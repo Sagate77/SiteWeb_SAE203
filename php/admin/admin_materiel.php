@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'bdd_sae203';
+$dbname = 'sae203';
 $username = 'root';
 $password = '';
 
@@ -12,7 +12,7 @@ try {
 }
 
 function uploadPhoto($file) {
-    $uploadDir = 'uploads/';
+    $uploadDir = '../uploads/';
     if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
 
     if ($file && $file['error'] === UPLOAD_ERR_OK) {

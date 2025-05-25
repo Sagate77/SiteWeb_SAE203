@@ -1,6 +1,6 @@
 // Attend que la page soit chargée
 document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('nav a');
+  const links = document.querySelectorAll('nav a:not(.exception)');
   const sections = document.querySelectorAll('.section');
 
   // Affiche la première section par défaut

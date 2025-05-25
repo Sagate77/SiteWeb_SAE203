@@ -13,18 +13,21 @@
         <nav class="menu">
             <img class="left" src="../../imagesSite/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
-            <div class="pages">
-                <a href="./materiel.php"><div>Matériel</div></a>
-                <a href="./salles.php"><div>Salles</div></a>
-                <a href="./reserver.php"><div>Réserver</div></a>
-                <a href="./reservations.php"><div>Mes Réservations</div></a>
-            </div>
+                <div class="pages">
+                    <a href="./materiel.php"><div>Catalogue</div></a>
+                    <a href="./reserver_materiel.php"><div>Materiel</div></a>
+                    <a href="./reserver_salles.php"><div>Salles</div></a>
+                    <a href="./reservations.php"><div>Mes Réservations</div></a>
+                </div>
             <img class="right" src="../../imagesSite/compte.png" alt="compte">
             <a href="compte.php" class="overlay_right"></a>
         </nav>
 
         <section class="banniere">
             <div class="img-banniere"></div>
+            <div class="txt_banniere">
+                <h1>Mon compte</h1>
+            </div>
         </section>
 
         <h2>Mes informations</h2>

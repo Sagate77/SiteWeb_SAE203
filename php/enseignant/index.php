@@ -14,8 +14,7 @@
             <img class="left" src="../../imagesSite/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
             <div class="pages">
-                <a href="./salles.php"><div>Salles</div></a>
-                <a href="./reserver.php"><div>Réserver</div></a>
+                <a href="./reserver_salles.php"><div>Salles</div></a>
                 <a href="./reservations.php"><div>Mes Réservations</div></a>
             </div>
             <img class="right" src="../../imagesSite/compte.png" alt="compte">
@@ -43,7 +42,7 @@
                 </p>
                 </div>
                 <div class="img-panneau">
-                <img src="../images/Salle138.JPG" alt="Panneau de destinations">
+                <img src="../../imagesSite/salle.jpg" alt="Panneau de destinations">
             </div>
         </section>
 
