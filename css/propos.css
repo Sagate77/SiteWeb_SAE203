@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-image: url("../images/iut2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+/* Centrage du bloc principal */
+
+.contenu {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Style des membres de l’équipe */
+
+.equipe .photos {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.equipe .membre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equipe .membre img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1e2a63; 
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    gap: 20px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    bottom: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-middle {
+    text-align: center;
+}
+
+.footer-middle p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-logo {
+    width: 50px; 
+    height: auto;
+    margin-top: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d3d3d3; 
+}
