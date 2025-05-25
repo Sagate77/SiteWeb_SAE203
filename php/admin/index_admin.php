@@ -41,7 +41,7 @@ if ($conn->connect_error) {
       <h2>Gestion du Matériel</h2>
 
       <!-- Ajout -->
-      <form action="materiel.php" method="POST" enctype="multipart/form-data">
+      <form action="admin_materiel.php" method="POST" enctype="multipart/form-data">
         <label>Référence :</label>
         <input type="text" name="reference" required>
 
@@ -79,7 +79,7 @@ if ($conn->connect_error) {
       <br>
 
       <!-- Modification -->
-      <form action="materiel.php" method="POST" enctype="multipart/form-data">
+      <form action="admin_materiel.php" method="POST" enctype="multipart/form-data">
         <label>ID du matériel à modifier :</label>
         <input type="number" name="id" required>
 
