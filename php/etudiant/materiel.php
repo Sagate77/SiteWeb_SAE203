@@ -1,12 +1,8 @@
-<?php
-session_start();
-if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Etudiant') {
-    header("Location: ../connexion.php");
-    exit();
-}
+<?php include '../pages/verif_etudiant.php'; ?>
 
-$pdo = new PDO('mysql:host=localhost;dbname=reservations_db;charset=utf8', 'root', '');
-$materiels = $pdo->query("SELECT * FROM materiels ORDER BY id DESC")->fetchAll();
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=sae203;charset=utf8', 'root', '');
+$materiels = $pdo->query("SELECT * FROM materiel ORDER BY id DESC")->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +50,13 @@ $materiels = $pdo->query("SELECT * FROM materiels ORDER BY id DESC")->fetchAll()
             echo "<td>";
             ?>
             <div class="materiel">
-                <?php if ($m['photo']): ?>
-                    <img src="<?= htmlspecialchars($m['photo']) ?>" alt="photo">
-                <?php endif; ?>
+                <?php 
+                if (!empty($m['photo']) && file_exists($m['photo'])) {
+                    echo '<img src="' . htmlspecialchars($m['photo']) . '" alt="photo">';
+                } else {
+                    echo 'Pas de photo';
+                }
+                ?>
                 <div>
                     <div class="infos titre"><?= htmlspecialchars($m['designation']) ?></div><br>
                     <div class="infos">Réf : <?= htmlspecialchars($m['reference']) ?></div>

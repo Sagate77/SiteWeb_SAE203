@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Etudiant') {
-    header("Location: ../connexion.php");
-    exit();
-}
-?>
+<?php include '../pages/verif_etudiant.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,7 +6,6 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Etudiant') {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Salles</title>
-        <link rel="stylesheet" href="../../css/salles.css">
         <link rel="stylesheet" href="../../css/structure.css">
     </head>
     <body>

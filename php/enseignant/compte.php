@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Enseignant') {
-    header("Location: connexion.php");
-    exit();
-}
-?>
+<?php include '../pages/verif_enseignant.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,6 +27,11 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Enseignant') {
                 <h1>Compte</h1>
             </div>
         </section>
+
+        <h2>Mes informations</h2>
+        <hr>
+
+        <?php include '../pages/compte.php'; ?>
 
         <footer>
             <div class="footer-container">

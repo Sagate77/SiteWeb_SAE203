@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'Agent') {
-    header("Location: ../connexion.php");
-    exit();
-}
-?>
+<?php include '../pages/verif_agent.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
