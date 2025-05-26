@@ -72,7 +72,7 @@ $reservations = $pdo->query("SELECT * FROM reservations ORDER BY date_reservatio
                 <input type="text" name="signature_admin" placeholder="Nom Prénom admin" required style="width:120px;">
                 <button type="submit" name="action" value="signer">Signer</button>
               <?php else: ?>
-                <?php if (trim(strtolower($res['statut'])) === 'en attente'): ?>
+                <?php if (trim(strtolower($res['statut'])) === 'en_attente'): ?>
                   <button type="submit" name="action" value="accepter">Accepter</button>
                   <button type="submit" name="action" value="refuser">Refuser</button>
                 <?php elseif (trim(strtolower($res['statut'])) === 'acceptée'): ?>
