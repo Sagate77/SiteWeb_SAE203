@@ -6,7 +6,13 @@ $pdo = new PDO('mysql:host=localhost;dbname=sae203;charset=utf8', 'root', '');
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     if ($_POST['action'] === 'ajouter' && !empty(trim($_POST['nom_salle']))) {
         $nom_salle = trim($_POST['nom_salle']);
-        $pdo->prepare("INSERT INTO salles (nom_salle) VALUES (?)")->execute([$nom_salle]);
+        $chemin = null;
+        if (isset($_FILES['photo_salle']) && $_FILES['photo_salle']['error'] === UPLOAD_ERR_OK) {
+            $nomFichier = basename($_FILES['photo_salle']['name']);
+            $chemin = '../uploads/' . uniqid() . '_' . $nomFichier;
+            move_uploaded_file($_FILES['photo_salle']['tmp_name'], $chemin);
+        }
+        $pdo->prepare("INSERT INTO salles (nom_salle, photo) VALUES (?, ?)")->execute([$nom_salle, $chemin]);
     }
     if ($_POST['action'] === 'supprimer' && isset($_POST['id_salle'])) {
         $id_salle = intval($_POST['id_salle']);
@@ -25,8 +31,9 @@ $salles = $pdo->query("SELECT * FROM salles ORDER BY nom_salle ASC")->fetchAll()
   <h2>Gestion des Salles Disponibles</h2>
 
   <!-- Formulaire ajout salle -->
-  <form method="post" action="">
+  <form method="post" action="" enctype="multipart/form-data">
     <input type="text" name="nom_salle" placeholder="Nom de la salle" required>
+    <input type="file" name="photo_salle" accept="image/*">
     <button type="submit" name="action" value="ajouter">Ajouter Salle</button>
   </form>
 

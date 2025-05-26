@@ -13,6 +13,7 @@
             <img class="left" src="../../images/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
             <div class="pages">
+                <a href="./materiel.php"><div>Catalogue</div></a>
                 <a href="./reserver_salles.php"><div>Salles</div></a>
                 <a href="./reservations.php"><div>Mes Réservations</div></a>
             </div>

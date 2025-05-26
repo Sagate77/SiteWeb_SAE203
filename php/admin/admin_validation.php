@@ -3,7 +3,7 @@
 $pdo = new PDO('mysql:host=localhost;dbname=sae203;charset=utf8', 'root', '');
 
 // Liste des rôles possibles
-$roles = ['Agent', 'Administrateur', 'Étudiant', 'Enseignant'];
+$roles = ['Agent', 'Administrateur', 'Etudiant', 'Enseignant'];
 
 // Traitement des actions (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['id'])) {

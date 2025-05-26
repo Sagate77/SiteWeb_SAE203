@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['id'
         $signature_admin = trim($_POST['signature_admin']);
         $pdo->prepare("UPDATE reservations SET signature_admin = ? WHERE id = ?")->execute([$signature_admin, $id]);
     } elseif ($_POST['action'] === 'accepter' || $_POST['action'] === 'refuser') {
-        $statut = $_POST['action'] === 'accepter' ? 'acceptée' : 'refusée';
+        $statut = $_POST['action'] === 'accepter' ? 'accepté' : 'refusé';
         $pdo->prepare("UPDATE reservations SET statut = ? WHERE id = ?")->execute([$statut, $id]);
     } elseif ($_POST['action'] === 'annuler') {
         // Met à jour le statut en 'annulée'
@@ -75,7 +75,7 @@ $reservations = $pdo->query("SELECT * FROM reservations ORDER BY date_reservatio
                 <?php if (trim(strtolower($res['statut'])) === 'en_attente'): ?>
                   <button type="submit" name="action" value="accepter">Accepter</button>
                   <button type="submit" name="action" value="refuser">Refuser</button>
-                <?php elseif (trim(strtolower($res['statut'])) === 'acceptée'): ?>
+                <?php elseif (trim(strtolower($res['statut'])) === 'accepté'): ?>
                   <button type="submit" name="action" value="annuler" onclick="return confirm('Annuler cette réservation ?')">Annuler</button>
                 <?php endif; ?>
                 <button type="submit" name="action" value="supprimer" onclick="return confirm('Supprimer cette réservation ?')">Supprimer</button>

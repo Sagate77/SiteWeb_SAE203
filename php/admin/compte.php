@@ -33,6 +33,10 @@
 
         <h2>Mes informations</h2>
         <hr>
+        
+        <form action="../deconnexion.php" method="post">
+            <button type="submit">Se déconnecter</button>
+        </form>
 
         <?php include '../pages/compte.php'; ?>
 

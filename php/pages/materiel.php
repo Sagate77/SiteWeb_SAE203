@@ -18,7 +18,7 @@
                 echo 'Pas de photo';
             }
 
-            echo '<div><div class="infos titre">' . htmlspecialchars($m['designation']) . '</div><br>';
+            echo '<div><div class="infos titre_materiel">' . htmlspecialchars($m['designation']) . '</div><br>';
             echo '<div class="infos">Réf : ' . htmlspecialchars($m['reference']) . '</div>';
             echo '<div class="infos">Type : ' . htmlspecialchars($m['type']) . '</div>';
             echo '<div class="infos">État : ' . htmlspecialchars($m['etat']) . '</div>';
@@ -27,9 +27,6 @@
             
             if ($m['descriptif']):
                 echo '<div class="infos descriptif">' . nl2br(htmlspecialchars($m['descriptif'])) . '</div>';
-                /*
-                <div class="infos descriptif"><?= nl2br(htmlspecialchars($m['descriptif'])) ?></div>
-                */
             endif;
             echo '</div></div>';
         echo "</td>";

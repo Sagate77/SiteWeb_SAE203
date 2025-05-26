@@ -14,6 +14,7 @@
             <img class="left" src="../../images/uge.png" alt="logo">
             <a href="index.php" class="overlay_left"></a>
             <div class="pages">
+                <a href="./materiel.php"><div>Catalogue</div></a>
                 <a href="./reserver_salles.php"><div>Salles</div></a>
                 <a href="./reservations.php"><div>Mes Réservations</div></a>
             </div>
@@ -30,6 +31,10 @@
 
         <h2>Mes informations</h2>
         <hr>
+
+        <form action="../deconnexion.php" method="post">
+            <button type="submit">Se déconnecter</button>
+        </form>
 
         <?php include '../pages/compte.php'; ?>
 

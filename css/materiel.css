@@ -28,15 +28,36 @@
     border-radius: 5px;
 }
 
+.salles {
+    display: flex;
+    padding: 20px;
+    gap: 15px;
+}
+
+.salles img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
 .infos {
     max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.titre {
+.titre_materiel {
     font-weight: bold;
     max-height: 38px;
+}
+
+.titre_salle {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .descriptif {

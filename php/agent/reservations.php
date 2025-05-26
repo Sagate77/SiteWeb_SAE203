@@ -4,8 +4,8 @@
 // Connexion à la base de données
 $host = 'localhost';
 $dbname = 'sae203';
-$username = 'root'; // remplace par ton utilisateur
-$password = '';     // remplace par ton mot de passe
+$username = 'root'; // remplace par l'utilisateur
+$password = '';     // remplace par le mot de passe
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -67,7 +67,7 @@ try {
 
         <div class="reservations">
         <!-- Tableau des réservations de salles -->
-        <h2>Réservations de Salles</h2>
+        <h3>Réservations de Salles</h3>
         <?php if (count($salles) > 0): ?>
             <table>
                 <thead>
@@ -104,11 +104,11 @@ try {
                 </tbody>
             </table>
         <?php else: ?>
-            <p>Aucune réservation de salle acceptée.</p>
+            <p class="description">Aucune réservation de salle acceptée.</p>
         <?php endif; ?>
 
         <!-- Tableau des réservations de matériel -->
-        <h2>Réservations de Matériel</h2>
+        <h3>Réservations de Matériel</h3>
         <?php if (count($materiels) > 0): ?>
             <table>
                 <thead>
@@ -141,7 +141,7 @@ try {
                 </tbody>
             </table>
         <?php else: ?>
-            <p>Aucune réservation de matériel acceptée.</p>
+            <p class="description">Aucune réservation de matériel acceptée.</p>
         <?php endif; ?>
         </div>
 

@@ -12,13 +12,12 @@
     <nav class="menu">
         <img class="left" src="../../images/uge.png" alt="logo">
         <a href="index.php" class="overlay_left"></a>
-        <div class="pages">
-            <a href="./materiel.php"><div>Catalogue</div></a>
-            <a href="./reserver_materiel.php"><div>Matériel</div></a>
-            <a href="./reserver_salles.php"><div>Salles</div></a>
-            <a href="./reservations.php"><div>Mes Réservations</div></a>
-            <a href="./index_admin.php"><div>Administrateur</div></a>
-        </div>
+            <div class="pages">
+                <a href="./materiel.php"><div>Catalogue</div></a>
+                <a href="./reserver_materiel.php"><div>Matériel</div></a>
+                <a href="./reserver_salles.php"><div>Salles</div></a>
+                <a href="./reservations.php"><div>Mes Réservations</div></a>
+            </div>
         <img class="right" src="../../images/compte.png" alt="compte">
         <a href="compte.php" class="overlay_right"></a>
     </nav>

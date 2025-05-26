@@ -17,6 +17,28 @@ h2 {
     margin-top: 40px;
 }
 
+/* Bouton retour */
+
+.retour {
+    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background-color: #4164ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.retour:hover {
+    background-color: #3955d2;
+}
+
 /* Centrage du bloc principal */
 
 .contenu {

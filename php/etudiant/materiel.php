@@ -20,7 +20,7 @@ $materiels = $pdo->query("SELECT * FROM materiel ORDER BY id DESC")->fetchAll();
             <a href="index.php" class="overlay_left"></a>
                 <div class="pages">
                     <a href="./materiel.php"><div>Catalogue</div></a>
-                    <a href="./reserver_materiel.php"><div>Materiel</div></a>
+                    <a href="./reserver_materiel.php"><div>Matériel</div></a>
                     <a href="./reserver_salles.php"><div>Salles</div></a>
                     <a href="./reservations.php"><div>Mes Réservations</div></a>
                 </div>
@@ -31,14 +31,19 @@ $materiels = $pdo->query("SELECT * FROM materiel ORDER BY id DESC")->fetchAll();
         <section class="banniere">
             <div class="img-banniere"></div>
             <div class="txt_banniere">
-                <h1>Matériel</h1>
+                <h1>Catalogue</h1>
             </div>
         </section>
 
-        <h2>Catalogue</h2>
+        <h2>Matériel</h2>
         <hr>
 
         <?php include '../pages/materiel.php'; ?>
+        
+        <h2>Salles</h2>
+        <hr>
+
+        <?php include '../pages/salles.php'; ?>
 
         <footer>
             <div class="footer-container">

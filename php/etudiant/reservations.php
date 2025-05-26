@@ -38,7 +38,7 @@ try {
             <a href="index.php" class="overlay_left"></a>
                 <div class="pages">
                     <a href="./materiel.php"><div>Catalogue</div></a>
-                    <a href="./reserver_materiel.php"><div>Materiel</div></a>
+                    <a href="./reserver_materiel.php"><div>Matériel</div></a>
                     <a href="./reserver_salles.php"><div>Salles</div></a>
                     <a href="./reservations.php"><div>Mes Réservations</div></a>
                 </div>
@@ -84,28 +84,32 @@ try {
                 echo '<h3>📦 Réservation de matériel</h3>';
 
                 if ($res1) {
-                    echo "<p><strong>Nom :</strong> " . htmlspecialchars($res1['nom'] . ' ' . $res1['prenom']) . "</p>";
-                    echo "<p><strong>Numéro étudiant :</strong> " . htmlspecialchars($res1['num_etudiant']) . "</p>";
-                    echo "<p><strong>Email :</strong> " . htmlspecialchars($res1['adresse_email']) . "</p>";
-                    echo "<p><strong>Groupe TP :</strong> " . htmlspecialchars($res1['groupe_tp']) . "</p>";
-                    echo "<p><strong>Matériel :</strong> " . htmlspecialchars($res1['materiel']) . "</p>";
-                    echo "<p><strong>Date :</strong> " . htmlspecialchars($res1['date_reservation']) . "</p>";
-                    echo "<p><strong>Heure :</strong> " . htmlspecialchars($res1['heure_debut']) . " - " . htmlspecialchars($res1['heure_fin']) . "</p>";
+                    foreach ($res1 as $row) {
+                        echo "<p><strong>Nom :</strong> " . htmlspecialchars($res1['nom'] . ' ' . $res1['prenom']) . "</p>";
+                        echo "<p><strong>Numéro étudiant :</strong> " . htmlspecialchars($res1['num_etudiant']) . "</p>";
+                        echo "<p><strong>Email :</strong> " . htmlspecialchars($res1['adresse_email']) . "</p>";
+                        echo "<p><strong>Groupe TP :</strong> " . htmlspecialchars($res1['groupe_tp']) . "</p>";
+                        echo "<p><strong>Matériel :</strong> " . htmlspecialchars($res1['materiel']) . "</p>";
+                        echo "<p><strong>Date :</strong> " . htmlspecialchars($res1['date_reservation']) . "</p>";
+                        echo "<p><strong>Heure :</strong> " . htmlspecialchars($res1['heure_debut']) . " - " . htmlspecialchars($res1['heure_fin']) . "</p>";
 
-                    $statut = strtolower($res1['statut']);
-                    if ($statut === 'accepté') {
-                        echo '<p class="accepted">✅ Réservation acceptée</p>';
-                    } elseif ($statut === 'refusé') {
-                        echo '<p class="refused">❌ Réservation refusée</p>';
-                    } else {
-                        echo '<p class="pending">⏳ En attente de validation</p>';
-                    }
+                        $statut = strtolower($res1['statut']);
+                        if ($statut === 'accepté') {
+                            echo '<p class="accepted">✅ Réservation acceptée</p>';
+                        } elseif ($statut === 'refusé') {
+                            echo '<p class="refused">❌ Réservation refusée</p>';
+                        } else {
+                            echo '<p class="pending">⏳ En attente de validation</p>';
+                        }
 
-                    if (!empty($res1['signature_admin'])) {
-                        echo "<p><strong>Signature admin :</strong> " . htmlspecialchars($res1['signature_admin']) . "</p>";
-                    }
-                    if (!empty($res1['commentaire'])) {
-                        echo "<p><strong>Commentaire :</strong> " . htmlspecialchars($res1['commentaire']) . "</p>";
+                        if (!empty($res1['signature_admin'])) {
+                            echo "<p><strong>Signature admin :</strong> " . htmlspecialchars($res1['signature_admin']) . "</p>";
+                        }
+                        if (!empty($res1['commentaire'])) {
+                            echo "<p><strong>Commentaire :</strong> " . htmlspecialchars($res1['commentaire']) . "</p>";
+                        }
+
+                        echo "<br>"; // Pour séparer les réservations
                     }
                 } else {
                     echo '<p class="no-result">Aucune réservation de matériel trouvée.</p>';
@@ -122,30 +126,34 @@ try {
                 echo '<h3>🏫 Réservation de salle</h3>';
 
                 if ($res2) {
-                    echo "<p><strong>Nom :</strong> " . htmlspecialchars($res2['nom'] . ' ' . $res2['prenom']) . "</p>";
-                    echo "<p><strong>Numéro étudiant :</strong> " . htmlspecialchars($res2['num_etudiant']) . "</p>";
-                    echo "<p><strong>Email :</strong> " . htmlspecialchars($res2['adresse_email']) . "</p>";
-                    echo "<p><strong>Groupe TP :</strong> " . htmlspecialchars($res2['groupe_tp']) . "</p>";
-                    echo "<p><strong>Salle :</strong> " . htmlspecialchars($res2['salle']) . "</p>";
-                    echo "<p><strong>Date :</strong> " . htmlspecialchars($res2['date_reservation']) . "</p>";
-                    echo "<p><strong>Heure :</strong> " . htmlspecialchars($res2['heure_debut']) . " - " . htmlspecialchars($res2['heure_fin']) . "</p>";
-                    echo "<p><strong>Participants :</strong> " . htmlspecialchars($res2['participants']) . "</p>";
-                    echo "<p><strong>Date soumission :</strong> " . htmlspecialchars($res2['date_soumission']) . "</p>";
+                    foreach ($res2 as $row) {
+                        echo "<p><strong>Nom :</strong> " . htmlspecialchars($row['nom'] . ' ' . $row['prenom']) . "</p>";
+                        echo "<p><strong>Numéro étudiant :</strong> " . htmlspecialchars($row['num_etudiant']) . "</p>";
+                        echo "<p><strong>Email :</strong> " . htmlspecialchars($row['adresse_email']) . "</p>";
+                        echo "<p><strong>Groupe TP :</strong> " . htmlspecialchars($row['groupe_tp']) . "</p>";
+                        echo "<p><strong>Salle :</strong> " . htmlspecialchars($row['salle']) . "</p>";
+                        echo "<p><strong>Date :</strong> " . htmlspecialchars($row['date_reservation']) . "</p>";
+                        echo "<p><strong>Heure :</strong> " . htmlspecialchars($row['heure_debut']) . " - " . htmlspecialchars($row['heure_fin']) . "</p>";
+                        echo "<p><strong>Participants :</strong> " . htmlspecialchars($row['participants']) . "</p>";
+                        echo "<p><strong>Date soumission :</strong> " . htmlspecialchars($row['date_soumission']) . "</p>";
 
-                    $statut2 = strtolower($res2['statut']);
-                    if ($statut2 === 'accepté') {
-                        echo '<p class="accepted">✅ Réservation acceptée</p>';
-                    } elseif ($statut2 === 'refusé') {
-                        echo '<p class="refused">❌ Réservation refusée</p>';
-                    } else {
-                        echo '<p class="pending">⏳ En attente de validation</p>';
-                    }
+                        $statut2 = strtolower($row['statut']);
+                        if ($statut2 === 'accepté') {
+                            echo '<p class="accepted">✅ Réservation acceptée</p>';
+                        } elseif ($statut2 === 'refusé') {
+                            echo '<p class="refused">❌ Réservation refusée</p>';
+                        } else {
+                            echo '<p class="pending">⏳ En attente de validation</p>';
+                        }
 
-                    if (!empty($res2['signature_admin'])) {
-                        echo "<p><strong>Signature admin :</strong> " . htmlspecialchars($res2['signature_admin']) . "</p>";
-                    }
-                    if (!empty($res2['commentaires'])) {
-                        echo "<p><strong>Commentaires :</strong> " . htmlspecialchars($res2['commentaires']) . "</p>";
+                        if (!empty($row['signature_admin'])) {
+                            echo "<p><strong>Signature admin :</strong> " . htmlspecialchars($row['signature_admin']) . "</p>";
+                        }
+                        if (!empty($row['commentaires'])) {
+                            echo "<p><strong>Commentaires :</strong> " . htmlspecialchars($row['commentaires']) . "</p>";
+                        }
+
+                        echo "<br>"; // Pour séparer les réservations
                     }
                 } else {
                     echo '<p class="no-result">Aucune réservation de salle trouvée.</p>';
